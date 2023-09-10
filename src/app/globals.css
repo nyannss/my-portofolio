@@ -2,26 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
+  @apply bg-primary text-white;
+}
+
+.header-container::before {
+  background: radial-gradient(
+    62.87% 100% at 50% 100%,
+    rgba(255, 255, 255, 0.12) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  bottom: 0;
+  content: "";
+  height: 1px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.font-name {
+  /* ahann. */
   background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    90deg,
+    #16cdd5 0%,
+    rgba(22, 205, 213, 0.723958) 15.06%,
+    rgba(22, 205, 213, 0) 100.31%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-emphasis-color: transparent;
+}
+
+.hero-section {
+  min-height: 100vh;
+}
+
+@media (min-height: 768px) {
+  .hero-section {
+    min-height: 40rem;
+    height: 768px;
+    max-height: 768px;
+    overflow-y: hidden;
+  }
 }
